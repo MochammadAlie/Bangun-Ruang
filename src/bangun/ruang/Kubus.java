@@ -66,6 +66,11 @@ public class Kubus extends javax.swing.JFrame {
         jScrollPane1.setViewportView(txtHasil);
 
         btnKeluar.setText("Keluar");
+        btnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKeluarActionPerformed(evt);
+            }
+        });
 
         btnHapus.setText("Hapus");
         btnHapus.addActionListener(new java.awt.event.ActionListener() {
@@ -134,7 +139,7 @@ public class Kubus extends javax.swing.JFrame {
         
         sisi = Integer.parseInt(txtSisi.getText());
         nilai = sisi * sisi * sisi;
-        hasil = String.valueOf(sisi);
+        hasil = String.valueOf(nilai);
         
         txtHasil.setText(hasil);
     }//GEN-LAST:event_btnVolumeActionPerformed
@@ -145,15 +150,20 @@ public class Kubus extends javax.swing.JFrame {
         float nilai, sisi;
         
         sisi = Integer.parseInt(txtSisi.getText());
-        nilai = 6 * (sisi * sisi * sisi * sisi * sisi * sisi);
-        hasil = String.valueOf(sisi);
+        nilai = 6 * (sisi * sisi);
+        hasil = String.valueOf(nilai);
         txtHasil.setText(hasil);
     }//GEN-LAST:event_btnLuasActionPerformed
 
     private void btnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHapusActionPerformed
         // TODO add your handling code here:
-        
+        txtSisi.setText("");
     }//GEN-LAST:event_btnHapusActionPerformed
+
+    private void btnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKeluarActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_btnKeluarActionPerformed
 
     /**
      * @param args the command line arguments
